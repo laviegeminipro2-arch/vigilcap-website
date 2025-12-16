@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Vigilcap Privacy Policy - How we protect your data with our local-first architecture">
+    <title>Privacy Policy | Vigilcap</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Spectral:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="flaticon-logo.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-page {
+            padding: calc(100px + var(--space-4xl)) 0 var(--space-4xl);
+            min-height: 100vh;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-content h1 {
+            margin-bottom: var(--space-lg);
+        }
+
+        .legal-date {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .legal-content h2 {
+            font-size: 1.25rem;
+            color: var(--gold-muted);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .legal-content p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.8;
+        }
+
+        .legal-content strong {
+            color: var(--white-stark);
+        }
+
+        .legal-content ul {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-xl);
+        }
+
+        .legal-content li {
+            margin-bottom: var(--space-sm);
+            color: var(--gray-200);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo-full.png" alt="Vigilcap" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#mechanism">How It Works</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#guarantee">Guarantee</a>
+                <a href="index.html" class="btn btn-outline-gold">Back to Home</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="legal-page">
+        <div class="container">
+            <div class="legal-content">
+                <h1>Privacy Policy</h1>
+                <p class="legal-date">Last Updated: December 16, 2025</p>
+
+                <h2>1. Our Data Architecture (Local Execution)</h2>
+                <p>Vigilcap operates on a <strong>"Local-First" architecture</strong>.</p>
+                <ul>
+                    <li><strong>Source Code:</strong> Your proprietary source code is scanned locally on your device. It
+                        is <strong>NOT</strong> uploaded to Vigilcap servers.</li>
+                    <li><strong>Metadata:</strong> Only anonymized metadata (file names, complexity scores, dependency
+                        lists) is processed to generate the report.</li>
+                </ul>
+
+                <h2>2. AI Processing & Data Retention</h2>
+                <p>Vigilcap utilizes third-party Large Language Models (LLMs) via API (e.g., OpenAI) to analyze
+                    metadata.</p>
+                <ul>
+                    <li><strong>Zero Training:</strong> Your data is <strong>NOT</strong> used to train AI models.</li>
+                    <li><strong>Retention:</strong> Metadata sent to the API is subject to the retention policies of the
+                        API provider (typically 30 days for abuse monitoring) but is not persisted by Vigilcap.</li>
+                </ul>
+
+                <h2>3. Payment Information</h2>
+                <p>We do not store credit card details. All transactions are processed by secure third-party payment
+                    processors (Stripe).</p>
+
+                <h2>4. Report Validation</h2>
+                <p>We store a cryptographic hash (HMAC) of generated reports to allow for authenticity verification. We
+                    do not store the full content of the reports unless explicitly authorized for support purposes.</p>
+
+                <div style="margin-top: var(--space-4xl); text-align: center;">
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    <a href="terms.html" class="btn btn-outline-gold">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2024 Vigilcap. All rights reserved.
+                    <a href="terms.html" style="color: var(--gray-400); margin-left: var(--space-lg);">Terms</a>
+                    <a href="privacy.html" style="color: var(--gray-400); margin-left: var(--space-md);">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

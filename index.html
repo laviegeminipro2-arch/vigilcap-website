@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Vigilcap: Automated Technical Due Diligence for Search Funds & Private Equity. Quantify technical debt, assess risk, and get bank-ready reports in 24 hours.">
+    <meta name="keywords"
+        content="technical due diligence, search fund, private equity, SaaS audit, technical debt, M&A, SBA 7(a), code audit">
+    <title>Vigilcap | Technical Due Diligence. Automated. Bank-Ready.</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Spectral:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="flaticon-logo.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo-full.png" alt="Vigilcap" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="#mechanism">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#guarantee">Guarantee</a>
+                <a href="#report-teaser" class="btn btn-outline-gold">View Sample Report</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Technical Due Diligence.<br><span class="gold-text">Automated. Bank-Ready.</span>
+                </h1>
+                <p class="hero-subtitle">For Search Funds and Private Equity. We scan the code locally, quantify the
+                    debt, and deliver an ISO-standard report in 24 hours.</p>
+                <p class="hero-hook">Turn <span class="code-text">"Spaghetti Code"</span> into a <span
+                        class="gold-text">Purchase Price Adjustment.</span></p>
+                <div class="hero-ctas">
+                    <a href="Vigilcap_Report_juice-shop-master.pdf" target="_blank"
+                        class="btn btn-outline-gold btn-lg">View Sample Report</a>
+                    <a href="#" class="btn btn-primary btn-lg">Get Your Report</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">$500M+</span>
+                        <span class="stat-label">Transaction Volume Analyzed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">24hrs</span>
+                        <span class="stat-label">Average Turnaround</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">$42K</span>
+                        <span class="stat-label">Avg. Technical Debt Found</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-report">
+                    <div class="report-header">
+                        <div class="report-logo">VIGILCAP</div>
+                        <div class="report-title">Technical Due Diligence Report</div>
+                    </div>
+                    <div class="report-content">
+                        <div class="risk-scorecard">
+                            <div class="scorecard-title">Risk Scorecard</div>
+                            <div class="score-item critical">
+                                <span class="score-label">Est. Remediation Cost</span>
+                                <span class="score-value">$145,000</span>
+                            </div>
+                            <div class="score-item warning">
+                                <span class="score-label">Technical Debt Ratio</span>
+                                <span class="score-value">34.2%</span>
+                            </div>
+                            <div class="score-item success">
+                                <span class="score-label">Architecture Health</span>
+                                <span class="score-value">B-</span>
+                            </div>
+                        </div>
+                        <div class="report-metrics">
+                            <div class="metric-row">
+                                <span>Database Scalability</span>
+                                <span class="badge badge-success">A</span>
+                            </div>
+                            <div class="metric-row">
+                                <span>3rd Party Libraries</span>
+                                <span class="badge badge-critical">3 Critical</span>
+                            </div>
+                            <div class="metric-row">
+                                <span>Bus Factor Risk</span>
+                                <span class="badge badge-warning">High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-gradient"></div>
+    </section>
+
+    <!-- Mechanism Section -->
+    <section class="mechanism" id="mechanism">
+        <div class="container">
+            <div class="mechanism-layout">
+                <div class="mechanism-content">
+                    <h2 class="section-title">Zero-Trust Architecture.<br><span class="gold-text">Seller-Approved
+                            Security.</span></h2>
+                    <p class="mechanism-intro">The biggest friction in LMM deals is seller IP paranoia. Our air-gapped
+                        approach eliminates it completely.</p>
+
+                    <div class="mechanism-steps">
+                        <div class="mechanism-step">
+                            <div class="step-number">01</div>
+                            <div class="step-content">
+                                <h3>Local Execution</h3>
+                                <p>Our engine runs entirely on the Seller's machine. Source code never leaves their
+                                    infrastructure. No cloud uploads. No data transmission.</p>
+                            </div>
+                        </div>
+                        <div class="mechanism-step">
+                            <div class="step-number">02</div>
+                            <div class="step-content">
+                                <h3>Zero-Knowledge Analysis</h3>
+                                <p>We measure structure, complexity, and risk patterns—not actual code. The algorithm
+                                    sees metrics, not IP. Your trade secrets stay invisible.</p>
+                            </div>
+                        </div>
+                        <div class="mechanism-step">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <h3>Encrypted Delivery</h3>
+                                <p>The report is generated locally and transmitted via encrypted channel directly to
+                                    you. 24-hour turnaround from scan to boardroom-ready PDF.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mechanism-visual">
+                    <div class="security-diagram">
+                        <div class="diagram-layer seller">
+                            <span class="layer-label">Seller Environment</span>
+                            <div class="layer-box">
+                                <div class="code-icon">{ }</div>
+                                <span>Source Code</span>
+                            </div>
+                            <div class="layer-box active">
+                                <div class="engine-icon">⚙️</div>
+                                <span>Vigilcap Engine</span>
+                            </div>
+                        </div>
+                        <div class="diagram-arrow">
+                            <span>Encrypted Metrics Only</span>
+                        </div>
+                        <div class="diagram-layer buyer">
+                            <span class="layer-label">Your Dashboard</span>
+                            <div class="layer-box">
+                                <div class="report-icon">📊</div>
+                                <span>Risk Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Bridge Section -->
+    <section class="financial-bridge" id="bridge">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">We Translate Code into <span class="gold-text">CapEx.</span></h2>
+                <p class="section-subtitle">Your lender doesn't care about 'Code Smell.' They care about Solvency. We
+                    convert technical findings into financial metrics you can use in the boardroom.</p>
+            </div>
+            <div class="money-shot-carousel">
+                <div class="carousel-track">
+                    <div class="money-shot-card active">
+                        <div class="money-shot-icon critical">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <div class="money-shot-content">
+                            <h4 class="money-shot-label">Technical Debt</h4>
+                            <div class="money-shot-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Code Complexity Score</span>
+                                    <span class="metric-value critical">Critical</span>
+                                </div>
+                                <div class="metric highlight">
+                                    <span class="metric-label">Est. Refactor Cost</span>
+                                    <span class="metric-value gold">$45,000</span>
+                                </div>
+                            </div>
+                            <div class="leverage-action">
+                                <span class="leverage-label">Leverage:</span>
+                                <span class="leverage-text">Negotiate Price Reduction</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="money-shot-card">
+                        <div class="money-shot-icon warning">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                            </svg>
+                        </div>
+                        <div class="money-shot-content">
+                            <h4 class="money-shot-label">Bus Factor</h4>
+                            <div class="money-shot-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Key Person Dependency</span>
+                                    <span class="metric-value warning">1 Developer</span>
+                                </div>
+                                <div class="metric highlight">
+                                    <span class="metric-label">Core Logic Control</span>
+                                    <span class="metric-value gold">85%</span>
+                                </div>
+                            </div>
+                            <div class="leverage-action">
+                                <span class="leverage-label">Leverage:</span>
+                                <span class="leverage-text">Require 'Key Man' Insurance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="money-shot-card">
+                        <div class="money-shot-icon critical">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                        <div class="money-shot-content">
+                            <h4 class="money-shot-label">IP Risk</h4>
+                            <div class="money-shot-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">License Conflict Detected</span>
+                                    <span class="metric-value critical">GPL-v3</span>
+                                </div>
+                                <div class="metric highlight">
+                                    <span class="metric-label">Affected Modules</span>
+                                    <span class="metric-value gold">Proprietary Core</span>
+                                </div>
+                            </div>
+                            <div class="leverage-action">
+                                <span class="leverage-label">Leverage:</span>
+                                <span class="leverage-text">Legal Indemnification Clause</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-dot active" data-index="0"></button>
+                    <button class="carousel-dot" data-index="1"></button>
+                    <button class="carousel-dot" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Agitation Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="problem-content">
+                <div class="problem-text">
+                    <h2 class="section-title">Don't Pledge Your Assets on a <span class="gold-text">"Black Box."</span>
+                    </h2>
+                    <p class="problem-stat"><span class="stat-highlight">70%</span> of LMM acquisitions require a code
+                        rewrite within 18 months.</p>
+                    <p class="problem-desc">If the platform fails, the SBA loan remains. Your personal guarantee doesn't
+                        care about "spaghetti code." Know exactly what you are buying before you sign.</p>
+                    <div class="problem-cta">
+                        <a href="#pricing" class="btn btn-primary btn-lg">Protect Your Investment</a>
+                    </div>
+                </div>
+                <div class="problem-visual">
+                    <div class="risk-chart-image">
+                        <img src="risk-graph.png" alt="The Bankruptcy Zone - Technical Debt vs Cash Flow"
+                            class="chart-img">
+                        <div class="chart-caption">When technical debt outpaces cash flow, your personal guarantee is on
+                            the line.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Preview Section -->
+    <section class="report-demo" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Inside the <span class="gold-text">Vigilcap Report</span></h2>
+                <p class="section-subtitle">A comprehensive 25+ page analysis covering every dimension of technical
+                    risk.</p>
+            </div>
+            <div class="report-preview-grid">
+                <div class="report-section-card">
+                    <div class="section-icon">📋</div>
+                    <h4>Executive Summary</h4>
+                    <p>High-level risk assessment with key findings, remediation priorities, and estimated costs—ready
+                        for your board meeting.</p>
+                </div>
+                <div class="report-section-card">
+                    <div class="section-icon">🛡️</div>
+                    <h4>Security Vulnerabilities</h4>
+                    <p>Complete vulnerability scan with severity ratings (Critical/High/Medium/Low), affected
+                        components, and remediation guidance.</p>
+                </div>
+                <div class="report-section-card">
+                    <div class="section-icon">📊</div>
+                    <h4>Code Quality Metrics</h4>
+                    <p>Maintainability scores (A-E grading), complexity analysis, test coverage, and technical debt
+                        quantification.</p>
+                </div>
+                <div class="report-section-card">
+                    <div class="section-icon">📦</div>
+                    <h4>Open Source Analysis</h4>
+                    <p>License compliance check, dependency health, outdated packages, and GPL/AGPL copyleft risk
+                        detection.</p>
+                </div>
+                <div class="report-section-card">
+                    <div class="section-icon">👤</div>
+                    <h4>Key Person Risk</h4>
+                    <p>Bus factor analysis showing code ownership concentration and critical knowledge dependencies.</p>
+                </div>
+                <div class="report-section-card">
+                    <div class="section-icon">💰</div>
+                    <h4>Remediation CapEx</h4>
+                    <p>Estimated costs to address each finding category, prioritized by risk and business impact.</p>
+                </div>
+            </div>
+            <div class="report-cta">
+                <a href="#report-teaser" class="btn btn-outline-gold btn-lg">View Full Sample Report (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Institutional Rigor. <span class="gold-text">Deal-Speed Pricing.</span></h2>
+                <p class="section-subtitle">Stop choosing between quality and affordability.</p>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-column competitor">
+                    <div class="pricing-header">
+                        <h3 class="pricing-tier">Freelance CTO</h3>
+                        <div class="pricing-price">$2,500 - $5,000</div>
+                        <div class="pricing-period">Per engagement</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <span class="feature-label">Speed</span>
+                            <span class="feature-value">7-14 Days</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Methodology</span>
+                            <span class="feature-value negative">Subjective Opinion</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Seller Friction</span>
+                            <span class="feature-value negative">High (Interviews)</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Data Privacy</span>
+                            <span class="feature-value negative">Code Shared via Email</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Output</span>
+                            <span class="feature-value">2-Page Email</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-column featured">
+                    <div class="featured-badge">Recommended</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-tier">VIGILCAP</h3>
+                        <div class="pricing-price"><span class="currency">$</span>4,950</div>
+                        <div class="pricing-period">Flat fee. No surprises.</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <span class="feature-label">Speed</span>
+                            <span class="feature-value positive">24 Hours</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Methodology</span>
+                            <span class="feature-value positive">ISO 5055 Standard</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Seller Friction</span>
+                            <span class="feature-value positive">Zero (Automated)</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Data Privacy</span>
+                            <span class="feature-value positive">Air-Gapped / Local</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Output</span>
+                            <span class="feature-value positive">25-Page CapEx Report</span>
+                        </div>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="#" class="btn btn-primary btn-lg btn-full">Get Your Report Now</a>
+                    </div>
+                </div>
+                <div class="pricing-column competitor">
+                    <div class="pricing-header">
+                        <h3 class="pricing-tier">Big 4 Firm</h3>
+                        <div class="pricing-price">$50,000+</div>
+                        <div class="pricing-period">Minimum engagement</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <span class="feature-label">Speed</span>
+                            <span class="feature-value">3-4 Weeks</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Methodology</span>
+                            <span class="feature-value">Team of Juniors</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Seller Friction</span>
+                            <span class="feature-value negative">High (Intrusive)</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Data Privacy</span>
+                            <span class="feature-value negative">Cloud Upload</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-label">Output</span>
+                            <span class="feature-value">100-Page Deck</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cost-of-inaction">
+                <div class="inaction-icon">⚠️</div>
+                <div class="inaction-content">
+                    <span class="inaction-label">Cost of No Diligence:</span>
+                    <span class="inaction-value">100% of Deal Value (Personal Guarantee at Risk)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee" id="guarantee">
+        <div class="container">
+            <div class="guarantee-content">
+                <div class="guarantee-seal">
+                    <div class="seal-inner">
+                        <div class="seal-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <div class="seal-text">GUARANTEED</div>
+                    </div>
+                </div>
+                <div class="guarantee-text">
+                    <h2 class="guarantee-title">The "Deal-Killer" <span class="gold-text">Guarantee.</span></h2>
+                    <p class="guarantee-desc">If our audit does not identify actionable risks or technical debt worth at
+                        least <span class="highlight">2x the cost of the report</span>, we will refund you in full.</p>
+                    <p class="guarantee-confidence">We are that confident in our engine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked <span class="gold-text">Questions</span></h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do you assess Open Source Risk?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We scan for Copyleft licenses (GPL, AGPL) that could force you to open-source your
+                            proprietary code. This is a critical IP risk in M&A that many buyers overlook until it's too
+                            late.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can you detect 'Spaghetti Code'?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We measure Cyclomatic Complexity and Coupling using ISO 5055 standards. High complexity
+                            scores indicate a fragile codebase that will require significant Refactoring CapEx
+                            post-close.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Will lenders accept your report for SBA 7(a) loans?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. SBA lenders require proof of asset viability. A Vigilcap report demonstrates that you
+                            have audited the core asset—the software—and have a plan to mitigate risks. This strengthens
+                            your loan application package.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is "Bus Factor" and why should I care?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Don't buy a job for one developer. Our Bus Factor Analysis identifies if your target
+                            acquisition is dependent on a single 'Hero Developer.' If that person leaves, does the asset
+                            value drop to zero? Know before you buy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Report Teaser Section -->
+    <section class="report-teaser" id="report-teaser">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Preview the <span class="gold-text">Full Report</span></h2>
+                <p class="section-subtitle">See exactly what you'll receive. Enter your email to unlock the complete 25+
+                    page analysis.</p>
+            </div>
+            <div class="teaser-container">
+                <div class="teaser-pages">
+                    <div class="teaser-page">
+                        <img src="report-page-1.png" alt="Report Cover Page" loading="lazy">
+                    </div>
+                    <div class="teaser-page">
+                        <img src="report-page-2.png" alt="Report Table of Contents" loading="lazy">
+                    </div>
+                    <div class="teaser-overlay">
+                        <div class="overlay-content">
+                            <div class="lock-icon">🔒</div>
+                            <h3>Unlock Full Report</h3>
+                            <p>Get instant access to the complete sample analysis</p>
+                            <button class="btn btn-primary btn-lg" id="open-email-modal">Enter Email to
+                                Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Negotiate with Leverage.<br><span class="gold-text">Close with Certainty.</span>
+                </h2>
+                <p class="cta-subtitle">Get institutional-grade diligence in 24 hours.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-xl" id="cta-get-report">Get Your Report Now</a>
+                    <a href="#report-teaser" class="btn btn-outline-light btn-xl">View Sample Report</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="logo-full.png" alt="Vigilcap" class="footer-logo">
+                    <p class="footer-tagline">Institutional-Grade Technical Due Diligence</p>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#mechanism">How It Works</a>
+                        <a href="#report-teaser">Sample Report</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#guarantee">Guarantee</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#mechanism">Methodology</a>
+                        <a href="#faq">For Sellers (Security FAQ)</a>
+                        <a href="#faq">SBA 7(a) Guide</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="mailto:contact@vigilcap.com">Contact</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-badges">
+                <div class="badge-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span>ISO/IEC 25010 Compliant</span>
+                </div>
+                <div class="badge-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    <span>GDPR Compliant</span>
+                </div>
+                <div class="badge-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    <span>SBA 7(a) Aligned</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-locations">
+                    <span>Global Operations:</span>
+                    <span class="location">Tel Aviv</span>
+                    <span class="separator">//</span>
+                    <span class="location">New York</span>
+                </div>
+                <div class="footer-copyright">
+                    © 2024 Vigilcap. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Email Capture Modal -->
+    <div class="modal-overlay" id="email-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal">&times;</button>
+            <div class="modal-body" id="modal-form-state">
+                <div class="modal-icon">📊</div>
+                <h3>Get the Full Sample Report</h3>
+                <p>Enter your email to instantly download the complete 25+ page Technical Due Diligence analysis.</p>
+                <form id="email-form">
+                    <div class="form-group">
+                        <input type="email" id="email-input" placeholder="your@email.com" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Download Report</button>
+                </form>
+                <p class="modal-disclaimer">We respect your privacy. No spam, ever. <a href="privacy.html">Privacy
+                        Policy</a></p>
+            </div>
+            <div class="modal-body modal-success" id="modal-success-state" style="display: none;">
+                <div class="modal-icon success">✓</div>
+                <h3>Success!</h3>
+                <p>Your download is ready.</p>
+                <a href="Vigilcap_Report_juice-shop-master.pdf" download class="btn btn-primary btn-full"
+                    id="download-link">Download Report (PDF)</a>
+                <p class="modal-disclaimer">Thank you for your interest in Vigilcap!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intake Form Modal (Get Your Report) -->
+    <div class="modal-overlay" id="intake-modal">
+        <div class="modal-content modal-intake">
+            <button class="modal-close" id="close-intake-modal">&times;</button>
+
+            <!-- Step 1: Form -->
+            <div class="modal-body" id="intake-form-state">
+                <div class="modal-badge">QUALIFICATION</div>
+                <h3>Request Your Technical Due Diligence Report</h3>
+                <p>Help us understand your deal to provide the most accurate analysis.</p>
+
+                <form id="intake-form">
+                    <div class="form-group">
+                        <label for="enterprise-value">Estimated Enterprise Value of Target Asset</label>
+                        <select id="enterprise-value" required>
+                            <option value="">Select a range...</option>
+                            <option value="under-1m">Under $1M</option>
+                            <option value="1m-5m">$1M - $5M</option>
+                            <option value="5m-plus">$5M+</option>
+                        </select>
+                        <span class="error-message" id="ev-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline">Target Timeline for Closing</label>
+                        <select id="timeline" required>
+                            <option value="">Select timeline...</option>
+                            <option value="urgent">Under 2 weeks (Urgent)</option>
+                            <option value="standard">2-4 weeks</option>
+                            <option value="flexible">1-2 months</option>
+                            <option value="exploratory">Just exploring options</option>
+                        </select>
+                        <span class="error-message" id="timeline-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="work-email">Work Email</label>
+                        <input type="email" id="work-email" placeholder="name@company.com" required>
+                        <span class="form-hint">Please use your business email address</span>
+                        <span class="error-message" id="work-email-error"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full btn-lg">Submit Request</button>
+                </form>
+
+                <p class="modal-disclaimer">Your information is secure and will never be shared. <a
+                        href="privacy.html">Privacy Policy</a></p>
+            </div>
+
+            <!-- Step 2: Success -->
+            <div class="modal-body modal-success" id="intake-success-state" style="display: none;">
+                <div class="modal-icon success">✓</div>
+                <h3>Request Received</h3>
+                <p class="success-message">A Senior Analyst will review your deal profile and send the Engagement Letter
+                    within <strong>2 hours</strong>.</p>
+                <div class="success-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">📧</span>
+                        <span>Check your inbox for confirmation</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">⏱️</span>
+                        <span>Response within 2 business hours</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📋</span>
+                        <span>Engagement letter with pricing details</span>
+                    </div>
+                </div>
+                <button class="btn btn-outline-gold btn-full" id="close-intake-success">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
