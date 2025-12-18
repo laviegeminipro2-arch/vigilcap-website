@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verify the authenticity of your Vigilcap Technical Due Diligence Report">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Report Verification | Vigilcap</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Spectral:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="flaticon-logo.png">
+
+    <style>
+        :root {
+            --navy-deep: #0A192F;
+            --navy-medium: #112240;
+            --navy-light: #1D3557;
+            --gold-primary: #C5A059;
+            --gold-muted: #B8956F;
+            --white-stark: #FFFFFF;
+            --gray-100: #F8F9FA;
+            --gray-200: #E9ECEF;
+            --gray-400: #8892B0;
+            --success: #10B981;
+            --error: #EF4444;
+            --font-heading: 'Spectral', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--navy-deep);
+            color: var(--white-stark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .verify-container {
+            background: var(--navy-medium);
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 560px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .verify-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--gold-muted);
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 0.375rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .verify-title {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .verify-subtitle {
+            color: var(--gray-400);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--gray-200);
+        }
+
+        .file-upload {
+            position: relative;
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .file-upload:hover {
+            border-color: var(--gold-muted);
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        .file-upload.dragover {
+            border-color: var(--gold-primary);
+            background: rgba(197, 160, 89, 0.1);
+        }
+
+        .file-upload.has-file {
+            border-color: var(--success);
+            border-style: solid;
+        }
+
+        .file-upload input {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .upload-text {
+            font-size: 0.9375rem;
+            color: var(--gray-400);
+        }
+
+        .upload-text strong {
+            color: var(--gold-muted);
+        }
+
+        .file-name {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--success);
+            margin-top: 0.5rem;
+            word-break: break-all;
+        }
+
+        .signature-input {
+            width: 100%;
+            padding: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--white-stark);
+            transition: border-color 0.2s;
+        }
+
+        .signature-input:focus {
+            outline: none;
+            border-color: var(--gold-muted);
+        }
+
+        .signature-input::placeholder {
+            color: var(--gray-400);
+        }
+
+        .form-hint {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-top: 0.5rem;
+        }
+
+        /* Button */
+        .verify-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-muted) 100%);
+            color: var(--navy-deep);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .verify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
+        }
+
+        .verify-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Result States */
+        .result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result.success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .result.error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .result-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .result-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .result.success .result-title {
+            color: var(--success);
+        }
+
+        .result.error .result-title {
+            color: var(--error);
+        }
+
+        .result-message {
+            font-size: 0.9375rem;
+            color: var(--gray-200);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 1.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-text {
+            font-size: 0.8125rem;
+            color: var(--gray-400);
+        }
+
+        .footer-link {
+            color: var(--gold-muted);
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top-color: var(--navy-deep);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .verify-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .verify-title {
+                font-size: 1.5rem;
+            }
+
+            .file-upload {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img src="logo-full.png" alt="Vigilcap" class="logo">
+        </a>
+    </header>
+
+    <main class="main">
+        <div class="verify-container">
+            <span class="verify-badge">REPORT VERIFICATION</span>
+            <h1 class="verify-title">Verify Report Authenticity</h1>
+            <p class="verify-subtitle">
+                Upload your Vigilcap report and enter the verification token to confirm the document has not been
+                tampered with.
+            </p>
+
+            <form id="verify-form">
+                <div class="form-group">
+                    <label class="form-label">Report PDF</label>
+                    <div class="file-upload" id="file-upload">
+                        <input type="file" id="report-file" accept=".pdf" required>
+                        <div class="upload-icon">📄</div>
+                        <p class="upload-text">
+                            <strong>Click to upload</strong> or drag and drop<br>
+                            PDF files only
+                        </p>
+                        <p class="file-name" id="file-name"></p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Verification Token</label>
+                    <input type="text" class="signature-input" id="signature-input"
+                        placeholder="Enter the 64-character verification token" maxlength="64" required>
+                    <p class="form-hint">The token was provided in your verification file (.txt)</p>
+                </div>
+
+                <button type="submit" class="verify-btn" id="verify-btn">
+                    <span id="btn-text">Verify Report</span>
+                </button>
+            </form>
+
+            <div class="result" id="result">
+                <div class="result-icon" id="result-icon"></div>
+                <h3 class="result-title" id="result-title"></h3>
+                <p class="result-message" id="result-message"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">
+            © 2025 Vigilcap. <a href="index.html" class="footer-link">Back to Home</a>
+        </p>
+    </footer>
+
+    <script>
+        // VERIFICATION ENDPOINT - Update this with your Cloudflare Worker URL
+        const VERIFY_API_URL = 'https://vigilcap-verify.lavie-geminipro2.workers.dev/verify';
+
+        // DOM Elements
+        const form = document.getElementById('verify-form');
+        const fileUpload = document.getElementById('file-upload');
+        const fileInput = document.getElementById('report-file');
+        const fileName = document.getElementById('file-name');
+        const signatureInput = document.getElementById('signature-input');
+        const verifyBtn = document.getElementById('verify-btn');
+        const btnText = document.getElementById('btn-text');
+        const result = document.getElementById('result');
+        const resultIcon = document.getElementById('result-icon');
+        const resultTitle = document.getElementById('result-title');
+        const resultMessage = document.getElementById('result-message');
+
+        // File Upload Handling
+        fileInput.addEventListener('change', handleFileSelect);
+
+        fileUpload.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            fileUpload.classList.add('dragover');
+        });
+
+        fileUpload.addEventListener('dragleave', () => {
+            fileUpload.classList.remove('dragover');
+        });
+
+        fileUpload.addEventListener('drop', (e) => {
+            e.preventDefault();
+            fileUpload.classList.remove('dragover');
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                handleFileSelect();
+            }
+        });
+
+        function handleFileSelect() {
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                fileName.textContent = file.name;
+                fileUpload.classList.add('has-file');
+            } else {
+                fileName.textContent = '';
+                fileUpload.classList.remove('has-file');
+            }
+        }
+
+        // Auto-uppercase signature input
+        signatureInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.toUpperCase().replace(/[^A-F0-9]/g, '');
+        });
+
+        // Form Submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const file = fileInput.files[0];
+            const signature = signatureInput.value.trim();
+
+            if (!file || !signature) {
+                showResult('error', 'Missing Information', 'Please upload a PDF and enter the verification token.');
+                return;
+            }
+
+            if (signature.length !== 64) {
+                showResult('error', 'Invalid Token', 'The verification token must be exactly 64 characters.');
+                return;
+            }
+
+            // Show loading state
+            verifyBtn.disabled = true;
+            btnText.innerHTML = '<div class="spinner"></div> Verifying...';
+            result.classList.remove('show');
+
+            try {
+                // Read file as base64
+                const fileData = await readFileAsBase64(file);
+
+                // Send to verification API
+                const response = await fetch(VERIFY_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        file: fileData,
+                        signature: signature
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.valid) {
+                    showResult('success', 'Verified ✓',
+                        'This report is authentic and has not been modified since it was issued by Vigilcap.');
+                } else {
+                    showResult('error', 'Verification Failed',
+                        'This report could not be verified. The document may have been modified or the token is incorrect.');
+                }
+            } catch (error) {
+                console.error('Verification error:', error);
+                showResult('error', 'Connection Error',
+                    'Unable to connect to verification server. Please try again later.');
+            }
+
+            // Reset button
+            verifyBtn.disabled = false;
+            btnText.textContent = 'Verify Report';
+        });
+
+        function readFileAsBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    // Remove data URL prefix to get just the base64
+                    const base64 = reader.result.split(',')[1];
+                    resolve(base64);
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function showResult(type, title, message) {
+            result.className = 'result show ' + type;
+            resultIcon.textContent = type === 'success' ? '✅' : '❌';
+            resultTitle.textContent = title;
+            resultMessage.textContent = message;
+        }
+    </script>
+</body>
+
+</html>
