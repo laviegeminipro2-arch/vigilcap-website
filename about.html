@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About Vigilcap - Bridging the gap between Financial Ambition and Technical Reality.">
+    <title>About | Vigilcap</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Spectral:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="flaticon-logo.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-page {
+            padding: calc(100px + var(--space-4xl)) 0 var(--space-4xl);
+            min-height: 100vh;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: var(--space-4xl);
+        }
+
+        .about-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: var(--gold-muted);
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.1;
+        }
+
+        .about-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-300);
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            margin-bottom: var(--space-4xl);
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--gold-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            color: var(--white-stark);
+            margin-bottom: var(--space-lg);
+            line-height: 1.3;
+        }
+
+        .about-section p {
+            font-size: 1.0625rem;
+            color: var(--gray-200);
+            line-height: 1.9;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-block {
+            background: linear-gradient(135deg, var(--navy-medium), var(--navy-light));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--gold-primary);
+            border-radius: 0 12px 12px 0;
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .highlight-block p {
+            font-size: 1.125rem;
+            margin: 0;
+            color: var(--gray-100);
+        }
+
+        .tenets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .tenet-card {
+            background: var(--navy-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tenet-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-muted));
+        }
+
+        .tenet-title {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--white-stark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .tenet-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-300);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .tech-highlight {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            background: rgba(197, 160, 89, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: var(--gold-primary);
+        }
+
+        .promise-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--navy-medium), rgba(197, 160, 89, 0.05));
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            border-radius: 16px;
+            padding: var(--space-3xl);
+            margin-top: var(--space-4xl);
+        }
+
+        .promise-intro {
+            font-size: 1rem;
+            color: var(--gray-400);
+            margin-bottom: var(--space-lg);
+        }
+
+        .promise-question {
+            font-family: var(--font-heading);
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 600;
+            color: var(--white-stark);
+            line-height: 1.4;
+        }
+
+        .promise-question .gold-text {
+            color: var(--gold-primary);
+        }
+
+        .about-cta {
+            text-align: center;
+            margin-top: var(--space-3xl);
+        }
+
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .tenets-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .promise-section {
+                padding: var(--space-xl);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo-full.png" alt="Vigilcap" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#mechanism">How It Works</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#guarantee">Guarantee</a>
+                <a href="index.html" class="btn btn-outline-gold">Back to Home</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="about-page">
+        <div class="container">
+            <div class="about-header">
+                <span class="about-badge">ABOUT VIGILCAP</span>
+                <h1 class="about-title">About <span class="gold-text">Vigilcap</span></h1>
+                <p class="about-subtitle">Bridging the gap between Financial Ambition and Technical Reality.</p>
+            </div>
+
+            <div class="about-content">
+                <!-- Section 1: The Mission -->
+                <div class="about-section">
+                    <span class="section-label">THE MISSION</span>
+                    <h2 class="section-heading">We Quantify the Invisible.</h2>
+
+                    <p>In the Lower Middle Market, buyers invest millions based on rigorous Financial Due Diligence
+                        (QofE). Yet, the asset they are buying—the software code—often remains a "Black Box."</p>
+
+                    <div class="highlight-block">
+                        <p><strong>Vigilcap was founded to solve a specific market failure:</strong> The Technical
+                            Information Asymmetry.</p>
+                    </div>
+
+                    <p>Sellers know where the bugs are. Buyers don't. We exist to level the playing field by translating
+                        "Spaghetti Code" into "Remediation Capex"—a financial metric that investors and lenders can
+                        actually use.</p>
+                </div>
+
+                <!-- Section 2: The Philosophy -->
+                <div class="about-section">
+                    <span class="section-label">THE PHILOSOPHY</span>
+                    <h2 class="section-heading">Financial Rigor meets Engineering Truth.</h2>
+
+                    <p>We are not just code scanners. We are <strong>Risk Architects</strong>. Our methodology is built
+                        on three core tenets:</p>
+
+                    <div class="tenets-grid">
+                        <div class="tenet-card">
+                            <h3 class="tenet-title">Code is Liability</h3>
+                            <p>Until proven otherwise, every line of code is a potential debt.</p>
+                        </div>
+                        <div class="tenet-card">
+                            <h3 class="tenet-title">Trustless Verification</h3>
+                            <p>We do not rely on Seller questionnaires. We rely on cryptographic proof and static
+                                analysis.</p>
+                        </div>
+                        <div class="tenet-card">
+                            <h3 class="tenet-title">Speed is Equity</h3>
+                            <p>In M&A, time kills deals. Our architecture delivers institutional-grade audits in 48
+                                hours, not 4 weeks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: The Technology -->
+                <div class="about-section">
+                    <span class="section-label">THE TECHNOLOGY</span>
+                    <h2 class="section-heading">The Vigilcap Engine</h2>
+
+                    <p>Our proprietary assessment engine combines <span class="tech-highlight">Deterministic Scanning
+                            (SAST)</span> with <span class="tech-highlight">Probabilistic Risk Modeling</span>.</p>
+
+                    <p>We benchmark target assets against a dataset of <strong>50,000+ vulnerability signatures</strong>
+                        and industry-standard complexity metrics (COCOMO), providing a defensible "Technical Solvency
+                        Score" that stands up to Credit Committee scrutiny.</p>
+                </div>
+
+                <!-- Section 4: Our Promise -->
+                <div class="promise-section">
+                    <p class="promise-intro">We don't take equity. We don't advise on strategy. We answer one question
+                        with absolute clarity:</p>
+                    <p class="promise-question">"Is this asset technically solvent, or is it a <span
+                            class="gold-text">lemon</span>?"</p>
+                </div>
+
+                <div class="about-cta">
+                    <a href="index.html#pricing" class="btn btn-primary btn-lg">Get Your Report Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 Vigilcap. All rights reserved.
+                    <a href="terms.html" style="color: var(--gray-400); margin-left: var(--space-lg);">Terms</a>
+                    <a href="privacy.html" style="color: var(--gray-400); margin-left: var(--space-md);">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

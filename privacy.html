@@ -118,19 +118,31 @@
                 <p>Any data processed during the scan exists in volatile memory (RAM) only for the duration of the
                     audit. It is discarded immediately upon report generation.</p>
 
-                <h2>3. DATA WE COLLECT</h2>
+                <h2>3. SOURCE CODE SECURITY & DATA HANDLING</h2>
+                <p>We recognize that Source Code is a highly sensitive asset. To ensure maximum security and
+                    intellectual property protection, Vigilcap adheres to the following strict data minimization
+                    protocols:</p>
 
-                <h3>3.1 The Report</h3>
-                <p>We receive a copy of the final PDF Report and the aggregate metadata (e.g., "Total Lines of Code,"
-                    "Complexity Score"). We do <strong>NOT</strong> receive the raw source code files.</p>
+                <h3>3.1 Local-First Architecture</h3>
+                <p>Our proprietary scanning engine operates locally on the user's infrastructure. We do not upload,
+                    store, or retain your raw source code files on our servers.</p>
 
-                <h3>3.2 Client Information</h3>
+                <h3>3.2 Ephemeral Processing</h3>
+                <p>Any data processed during the audit exists in volatile memory (RAM) only for the duration of the scan
+                    session. It is permanently discarded immediately upon the generation of the PDF Report.</p>
+
+                <h3>3.3 No AI Training</h3>
+                <p>We explicitly warrant that we do not use any Client source code, proprietary algorithms, or trade
+                    secrets to train, fine-tune, or improve our artificial intelligence models. <strong>Your IP remains
+                        yours.</strong></p>
+
+                <h3>3.4 Data We Receive</h3>
+                <p>The only data transmitted to Vigilcap is the final PDF Report and the cryptographic metadata (SHA-256
+                    hash) required for report verification.</p>
+
+                <h2>4. CLIENT INFORMATION</h2>
                 <p>We collect standard billing information (Name, Email, Payment Method) via our Merchant of Record
                     (Lemon Squeezy).</p>
-
-                <h2>4. NO AI TRAINING</h2>
-                <p>We explicitly warrant that we do not use any Client source code, proprietary logic, or trade secrets
-                    to train, fine-tune, or improve our artificial intelligence models.</p>
 
                 <h2>5. SECURITY</h2>
                 <p>We employ industry-standard encryption (TLS 1.2+) for all report transmissions. However, no method of
