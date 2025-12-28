@@ -1464,11 +1464,16 @@ section {
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--transition-slow);
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height var(--transition-slow), opacity var(--transition-slow), visibility 0s linear 0.3s;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px;
+    max-height: 500px;
+    visibility: visible;
+    opacity: 1;
+    transition: max-height var(--transition-slow), opacity var(--transition-slow), visibility 0s linear 0s;
 }
 
 .faq-answer p {

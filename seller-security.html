@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Security & Privacy for Sellers - Zero-Trust Architecture. Zero Code Exfiltration. Learn how Vigilcap protects your source code.">
+    <title>Security for Sellers | Vigilcap</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Spectral:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="flaticon-logo.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .security-page {
+            padding: calc(100px + var(--space-4xl)) 0 var(--space-4xl);
+            min-height: 100vh;
+        }
+
+        .security-header {
+            text-align: center;
+            margin-bottom: var(--space-4xl);
+        }
+
+        .security-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: #10B981;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .security-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .security-subtitle {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--gold-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .security-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-section {
+            background: var(--navy-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-3xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981, var(--gold-primary));
+        }
+
+        .intro-section p {
+            font-size: 1.0625rem;
+            color: var(--gray-200);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .faq-card {
+            background: var(--navy-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            padding: var(--space-xl);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-number {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--gold-muted);
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-xs);
+        }
+
+        .faq-question {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white-stark);
+            margin: 0;
+        }
+
+        .faq-body {
+            padding: var(--space-xl);
+        }
+
+        .answer-highlight {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #10B981;
+            margin-bottom: var(--space-md);
+        }
+
+        .answer-highlight.warning {
+            color: var(--gold-primary);
+        }
+
+        .faq-body p {
+            color: var(--gray-200);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .faq-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .data-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .data-column {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: var(--space-lg);
+        }
+
+        .data-column.see {
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .data-column.not-see {
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .data-column h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+
+        .data-column.see h4 {
+            color: #10B981;
+        }
+
+        .data-column.not-see h4 {
+            color: #EF4444;
+        }
+
+        .data-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .data-column li {
+            font-size: 0.875rem;
+            color: var(--gray-300);
+            padding: var(--space-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .data-column.see li::before {
+            content: '✓';
+            color: #10B981;
+            font-weight: bold;
+        }
+
+        .data-column.not-see li::before {
+            content: '✗';
+            color: #EF4444;
+            font-weight: bold;
+        }
+
+        .options-list {
+            margin-top: var(--space-lg);
+        }
+
+        .option-item {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .option-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .option-title {
+            font-weight: 600;
+            color: var(--gold-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .option-desc {
+            font-size: 0.9375rem;
+            color: var(--gray-300);
+            margin: 0;
+        }
+
+        .code-ref {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: var(--gray-200);
+        }
+
+        .security-cta {
+            text-align: center;
+            margin-top: var(--space-3xl);
+            padding: var(--space-2xl);
+            background: linear-gradient(135deg, var(--navy-medium), rgba(16, 185, 129, 0.05));
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            border-radius: 16px;
+        }
+
+        .security-cta h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .security-cta p {
+            color: var(--gray-300);
+            margin-bottom: var(--space-xl);
+        }
+
+        @media (max-width: 768px) {
+            .security-title {
+                font-size: 1.75rem;
+            }
+
+            .data-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-header,
+            .faq-body {
+                padding: var(--space-lg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo-full.png" alt="Vigilcap" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#mechanism">How It Works</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#guarantee">Guarantee</a>
+                <a href="index.html" class="btn btn-outline-gold">Back to Home</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="security-page">
+        <div class="container">
+            <div class="security-header">
+                <span class="security-badge">🔒 FOR SELLERS</span>
+                <h1 class="security-title">Security & Privacy <span class="gold-text">for Sellers</span></h1>
+                <p class="security-subtitle">Zero-Trust Architecture. Zero Code Exfiltration.</p>
+            </div>
+
+            <div class="security-content">
+                <div class="intro-section">
+                    <p>We understand that your source code is your most valuable intellectual property. <strong>You
+                            should not have to upload it to a third-party cloud to prove its quality.</strong></p>
+                    <p>Vigilcap utilizes a "Local-First" architecture designed to respect your data sovereignty while
+                        providing transparency to the buyer.</p>
+                </div>
+
+                <div class="faq-list">
+                    <!-- FAQ 1 -->
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <span class="faq-number">FAQ 01</span>
+                            <h2 class="faq-question">Do you upload my code to the cloud?</h2>
+                        </div>
+                        <div class="faq-body">
+                            <p class="answer-highlight">No.</p>
+                            <p>Our scanning engine runs locally. The analysis happens in ephemeral memory (RAM) on your
+                                infrastructure (or a secured neutral environment). Your raw source code files are
+                                <strong>never transmitted</strong> to Vigilcap servers, <strong>never stored</strong>,
+                                and <strong>never seen</strong> by our human analysts.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <span class="faq-number">FAQ 02</span>
+                            <h2 class="faq-question">Do you use my code to train AI?</h2>
+                        </div>
+                        <div class="faq-body">
+                            <p class="answer-highlight">Absolutely not.</p>
+                            <p>Our probabilistic models are pre-trained. We strictly prohibit the use of client data for
+                                model fine-tuning. <strong>Your IP remains yours.</strong> We audit the metadata
+                                (complexity, patterns, security), not the trade secrets.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <span class="faq-number">FAQ 03</span>
+                            <h2 class="faq-question">What data does the buyer see?</h2>
+                        </div>
+                        <div class="faq-body">
+                            <p class="answer-highlight warning">The buyer receives a High-Level Risk Assessment.</p>
+
+                            <div class="data-comparison">
+                                <div class="data-column see">
+                                    <h4>They See:</h4>
+                                    <ul>
+                                        <li>"Technical Debt Ratio: 15%"</li>
+                                        <li>"Database Complexity Score: High"</li>
+                                        <li>"License Risk: 2 GPL Violations"</li>
+                                    </ul>
+                                </div>
+                                <div class="data-column not-see">
+                                    <h4>They Do NOT See:</h4>
+                                    <ul>
+                                        <li>Your algorithms</li>
+                                        <li>Your customer lists</li>
+                                        <li>Your specific logic implementation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <span class="faq-number">FAQ 04</span>
+                            <h2 class="faq-question">How secure is the process?</h2>
+                        </div>
+                        <div class="faq-body">
+                            <p>We utilize <span class="code-ref">HMAC-SHA256</span> Cryptographic Signing for all
+                                reports.</p>
+                            <p>This protects <strong>you</strong> as much as the buyer. It ensures that the report
+                                reflects exactly what was scanned at that moment in time, preventing anyone from
+                                altering the results later to manipulate the deal price.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <span class="faq-number">FAQ 05</span>
+                            <h2 class="faq-question">I don't want to run an EXE file. What are my options?</h2>
+                        </div>
+                        <div class="faq-body">
+                            <p>We support multiple engagement models:</p>
+
+                            <div class="options-list">
+                                <div class="option-item">
+                                    <div class="option-title">🎥 Guided Zoom Audit</div>
+                                    <p class="option-desc">We jump on a call, you run the scan while screen-sharing
+                                        (code remains on your screen), and the report is generated instantly.</p>
+                                </div>
+                                <div class="option-item">
+                                    <div class="option-title">🧪 Clean Room</div>
+                                    <p class="option-desc">We can scan a specific "Audit Branch" of your Git repository
+                                        in a temporary, isolated container.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="security-cta">
+                    <h3>Ready to Learn More?</h3>
+                    <p>Contact us to discuss a secure audit arrangement that works for your situation.</p>
+                    <a href="mailto:contact@vigilcap.com" class="btn btn-primary btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 Vigilcap. All rights reserved.
+                    <a href="terms.html" style="color: var(--gray-400); margin-left: var(--space-lg);">Terms</a>
+                    <a href="privacy.html" style="color: var(--gray-400); margin-left: var(--space-md);">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
