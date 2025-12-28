@@ -48,6 +48,13 @@
             margin-bottom: var(--space-md);
         }
 
+        .legal-content h3 {
+            font-size: 1rem;
+            color: var(--white-stark);
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+
         .legal-content p {
             margin-bottom: var(--space-lg);
             line-height: 1.8;
@@ -93,34 +100,41 @@
     <section class="legal-page">
         <div class="container">
             <div class="legal-content">
-                <h1>Privacy Policy</h1>
-                <p class="legal-date">Last Updated: December 16, 2025</p>
+                <h1>VIGILCAP PRIVACY POLICY</h1>
+                <p class="legal-date">Last Updated: December 27, 2025</p>
 
-                <h2>1. Our Data Architecture (Local Execution)</h2>
-                <p>Vigilcap operates on a <strong>"Local-First" architecture</strong>.</p>
-                <ul>
-                    <li><strong>Source Code:</strong> Your proprietary source code is scanned locally on your device. It
-                        is <strong>NOT</strong> uploaded to Vigilcap servers.</li>
-                    <li><strong>Metadata:</strong> Only anonymized metadata (file names, complexity scores, dependency
-                        lists) is processed to generate the report.</li>
-                </ul>
+                <h2>1. INTRODUCTION</h2>
+                <p>Vigilcap ("we," "us") provides technical due diligence services. We understand that Source Code is
+                    the most valuable asset in an M&A transaction. This policy outlines our strict "Zero-Retention" data
+                    handling practices.</p>
 
-                <h2>2. AI Processing & Data Retention</h2>
-                <p>Vigilcap utilizes third-party Large Language Models (LLMs) via API (e.g., OpenAI) to analyze
-                    metadata.</p>
-                <ul>
-                    <li><strong>Zero Training:</strong> Your data is <strong>NOT</strong> used to train AI models.</li>
-                    <li><strong>Retention:</strong> Metadata sent to the API is subject to the retention policies of the
-                        API provider (typically 30 days for abuse monitoring) but is not persisted by Vigilcap.</li>
-                </ul>
+                <h2>2. THE "LOCAL-FIRST" ARCHITECTURE</h2>
 
-                <h2>3. Payment Information</h2>
-                <p>We do not store credit card details. All transactions are processed by secure third-party payment
-                    processors (Stripe).</p>
+                <h3>2.1 No Uploads</h3>
+                <p>Our core scanning engine runs locally on the user's infrastructure. We do not upload source code
+                    files to our cloud servers for analysis.</p>
 
-                <h2>4. Report Validation</h2>
-                <p>We store a cryptographic hash (HMAC) of generated reports to allow for authenticity verification. We
-                    do not store the full content of the reports unless explicitly authorized for support purposes.</p>
+                <h3>2.2 Ephemeral Processing</h3>
+                <p>Any data processed during the scan exists in volatile memory (RAM) only for the duration of the
+                    audit. It is discarded immediately upon report generation.</p>
+
+                <h2>3. DATA WE COLLECT</h2>
+
+                <h3>3.1 The Report</h3>
+                <p>We receive a copy of the final PDF Report and the aggregate metadata (e.g., "Total Lines of Code,"
+                    "Complexity Score"). We do <strong>NOT</strong> receive the raw source code files.</p>
+
+                <h3>3.2 Client Information</h3>
+                <p>We collect standard billing information (Name, Email, Payment Method) via our Merchant of Record
+                    (Lemon Squeezy).</p>
+
+                <h2>4. NO AI TRAINING</h2>
+                <p>We explicitly warrant that we do not use any Client source code, proprietary logic, or trade secrets
+                    to train, fine-tune, or improve our artificial intelligence models.</p>
+
+                <h2>5. SECURITY</h2>
+                <p>We employ industry-standard encryption (TLS 1.2+) for all report transmissions. However, no method of
+                    transmission over the Internet is 100% secure.</p>
 
                 <div style="margin-top: var(--space-4xl); text-align: center;">
                     <a href="index.html" class="btn btn-primary">Back to Home</a>
@@ -135,7 +149,7 @@
         <div class="container">
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    © 2024 Vigilcap. All rights reserved.
+                    © 2025 Vigilcap. All rights reserved.
                     <a href="terms.html" style="color: var(--gray-400); margin-left: var(--space-lg);">Terms</a>
                     <a href="privacy.html" style="color: var(--gray-400); margin-left: var(--space-md);">Privacy</a>
                 </div>
