@@ -1257,6 +1257,95 @@ section {
     margin-top: var(--space-xl);
 }
 
+/* New Product Tier Styles */
+.pricing-column.faded {
+    opacity: 0.6;
+}
+
+.pricing-column.faded:hover {
+    opacity: 0.8;
+}
+
+.pricing-speed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-xl);
+}
+
+.speed-label {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.speed-value {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--gold-muted);
+}
+
+/* Feature list styles */
+.feature.included,
+.feature.excluded,
+.feature.warning {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature.included:last-child,
+.feature.excluded:last-child,
+.feature.warning:last-child {
+    border-bottom: none;
+}
+
+.feature-check {
+    font-size: 1rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.feature-text {
+    font-size: 0.9375rem;
+    color: var(--gray-200);
+}
+
+.feature.included .feature-text {
+    color: var(--white-stark);
+}
+
+.feature.excluded .feature-text {
+    color: var(--gray-400);
+}
+
+.feature.warning .feature-text {
+    color: var(--warning);
+}
+
+/* Legacy model label */
+.legacy-label {
+    display: block;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px dashed var(--gray-500);
+    border-radius: var(--radius-md);
+}
+
 .cost-of-inaction {
     display: flex;
     align-items: center;
